@@ -50,7 +50,7 @@ export default class UI {
     const showCardHolder = document.querySelector('#show-card-holder');
     showCardHolder.innerHTML = '';
 
-    const data = await UI.getPopularShows(96);
+    const data = await UI.getPopularShows(97);
 
     data.forEach((show) => {
       showCardHolder.innerHTML += `<div class="col">
