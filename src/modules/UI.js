@@ -23,7 +23,7 @@ export default class UI {
       });
     }
   }
-  
+
   static commentsListener() {
     const comments = document.querySelectorAll('.comments-btn');
     if (comments) {
@@ -34,7 +34,7 @@ export default class UI {
       });
     }
   }
-  
+
   static reservationListener() {
     const reservations = document.querySelectorAll('.reservation-btn');
     if (reservations) {
@@ -49,7 +49,7 @@ export default class UI {
   static async displayShows() {
     const showCardHolder = document.querySelector('#show-card-holder');
     showCardHolder.innerHTML = '';
-    
+
     const data = await UI.getPopularShows(96);
 
     data.forEach((show) => {
@@ -78,6 +78,4 @@ export default class UI {
     UI.commentsListener();
     UI.reservationListener();
   }
-
-
 }
