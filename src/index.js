@@ -4,19 +4,10 @@ import '@fortawesome/fontawesome-free/js/solid.js';
 import '@fortawesome/fontawesome-free/js/regular.js';
 import '@fortawesome/fontawesome-free/js/brands.js';
 import './styles.css';
-import popularShows from './modules/getShows.js';
-import {
-  imageListener, renderShows, commentsListener, reservationListener,
-} from './modules/userInterface.js';
+import UI from './modules/UI';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  popularShows().then((result) => {
-    renderShows(result);
-  }).then(() => {
-    imageListener();
-    commentsListener();
-    reservationListener();
-  });
+  UI.displayShows();
 });
 
 // This Branch will receive all of my work
