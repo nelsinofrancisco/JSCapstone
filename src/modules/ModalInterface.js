@@ -1,6 +1,6 @@
 export default class Modal {
   static async getComments(showIndex) {
-    const baseUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/9j4T0EvloyUNWKzzonxh/comments?item_id=${showIndex}`;
+    const baseUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/06PVGgvDd8phHuVhPNDL/comments?item_id=${showIndex}`;
     const commentsResponse = await fetch(baseUrl, {
       headers: {
         'Content-type': 'application/json',
@@ -54,7 +54,7 @@ export default class Modal {
    <form action="submit" class="comments-form-container d-flex flex-column"  data-show-id=${showIndex}>
      <input type="text" class="modal-input mb-2" placeholder="Your Name"/>
      <textarea class="modal-textarea mb-2" placeholder="Your comment" cols="30" rows="10"></textarea>
-     <button type="submit" class="submit-button default-button mb-2">Comment</button>
+     <button type="submit" class="submit-button button mb-2">Comment</button>
    </form>
    </div>
   </div>`;
@@ -104,7 +104,7 @@ export default class Modal {
   }
 
   static async postComment(id, name, newComment) {
-    const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/9j4T0EvloyUNWKzzonxh/comments', {
+    const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/06PVGgvDd8phHuVhPNDL/comments', {
       method: 'POST',
       body: JSON.stringify({
         item_id: id,

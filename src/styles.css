@@ -1,15 +1,22 @@
 :root {
-  --secundary-bc-color: #161616;
+  --primary-bc-color: #220819;
+  --secundary-bc-color: #0c000a;
   --secundary-font-color: #fff;
-  --modal-bc-color: #000000fb;
+  --modal-bc-color: #0f000cfb;
   --modal-bc-info: #fff;
-  --primary-show-bc-color: red;
-  --primary-show-font-color: #001011;
+  --primary-show-bc-color: #f8d5ee;
+  --primary-show-font-color: #000c06;
+  --button-bc-color: #1b0117;
+  --button-font-color: #fff;
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+main {
+  background-color: var(--primary-bc-color);
 }
 
 p,
@@ -23,16 +30,12 @@ h3 {
   color: var(--secundary-font-color);
 }
 
-.page-container {
-  position: relative;
-  min-height: 100vh;
-}
-
 .page-header {
   top: 0;
   left: 0;
   background-color: var(--secundary-bc-color);
   z-index: 1;
+  padding: 1rem 1rem 1rem 3vw;
 }
 
 .page-logo-container {
@@ -56,6 +59,10 @@ h3 {
 
 .nav-item:hover {
   color: var(--secundary-font-color);
+}
+
+.main-content {
+  background-color: var(--primary-bc-color);
 }
 
 .modal-background {
@@ -97,7 +104,7 @@ h3 {
 .footer {
   background-color: var(--secundary-bc-color);
   width: 100%;
-  height: 2.5rem;
+  padding: 1rem 1rem 1rem 3vw;
 }
 
 .show-card {
@@ -109,6 +116,8 @@ h3 {
 .show-title {
   font-size: 1em;
   font-weight: bold;
+  text-align: center;
+  color: var(--primary-show-font-color);
 }
 
 .show-image {
@@ -116,13 +125,13 @@ h3 {
 }
 
 .button {
-  background-color: var(--primary-show-font-color);
+  background-color: var(--button-bc-color);
   border: none;
-  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 0.75em;
   border-radius: 5px;
+  color: var(--button-font-color);
 }
