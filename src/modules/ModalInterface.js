@@ -5,20 +5,19 @@ export default class Modal {
       headers: {
         'Content-type': 'application/json',
       },
-    }).then((response) => {
-      if (response.status >= 400 && response.status < 600) {
-        const result = [{
-          username: '',
-          creation_date: '',
-          comment: 'No comments Yet',
-        }];
-        return result;
-      }
-      return response.json();
     });
 
-    const commentsArray = await commentsResponse;
-    return commentsArray;
+    const movie = await commentsResponse;
+    if (movie.status >= 400 && movie.status < 600) {
+      const result = [{
+        username: '',
+        creation_date: '',
+        comment: 'No comments Yet',
+      }];
+      return result;
+    }
+
+    return movie.json();
   }
 
   static closeModal() {
@@ -120,17 +119,21 @@ export default class Modal {
     return response;
   }
 
+  static async #privateFormListenerFunc(nameText, commentText, showIndex) {
+    const nameInput = nameText;
+    const commentTextArea = commentText;
+    await Modal.postComment(showIndex, nameInput, commentTextArea);
+
+    Modal.displayComments(null, showIndex);
+  }
+
   static async addNewComment(showIndex) {
     const addNewCommentForm = document.querySelector('.comments-form-container');
     if (addNewCommentForm) {
       addNewCommentForm.addEventListener('submit', (e) => {
-        const nameInput = addNewCommentForm.children[0].value;
-        const commentTextArea = addNewCommentForm.children[1].value;
-        Modal.postComment(showIndex,
-          nameInput, commentTextArea)
-          .then(() => {
-            Modal.displayComments(null, showIndex);
-          });
+        Modal.#privateFormListenerFunc(addNewCommentForm.children[0].value,
+          addNewCommentForm.children[1].value, showIndex);
+
         e.preventDefault();
       });
     }

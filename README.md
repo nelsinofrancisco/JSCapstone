@@ -23,7 +23,7 @@ UI of the Pop Up:
 
 ## Project Description (Loom Video)
 
-Check out the [video](https://www.loom.com/share/cfc64e65a3af494998491ee142811a67)
+Check out the [video](https://www.loom.com/share/9c979ec4ed3a4784b4cafb54013640b7)
 
 ## Getting Started
 
